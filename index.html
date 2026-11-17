@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Let Me Guess — Scam Interrupter Demo</title>
+<style>
+:root{--navy:#101d31;--navy2:#1b2b43;--paper:#f6f3ea;--white:#fff;--ink:#17253a;--muted:#718094;--line:#e4e6e8;--teal:#13816e;--tealbg:#e2f3ed;--amber:#ffae40;--amberbg:#fff2d9;--red:#c74742;--redbg:#fff0ed;--shadow:0 20px 60px rgba(16,29,49,.08)}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.48}.layout{min-height:100vh;display:grid;grid-template-columns:254px 1fr}.sidebar{background:var(--navy);color:white;padding:30px 20px;display:flex;flex-direction:column;gap:32px}.brand{display:flex;align-items:center;gap:12px;padding:5px 10px}.brandmark{background:var(--amber);color:var(--navy);height:39px;width:39px;border-radius:13px;display:grid;place-items:center;font-size:22px;font-weight:900}.brand b{font-size:17px;letter-spacing:-.5px}.brand small{display:block;color:#9baaba;margin-top:3px;font-size:10px;letter-spacing:1.4px;text-transform:uppercase}.navlabel{font-size:10px;letter-spacing:1.7px;color:#8292a7;text-transform:uppercase;font-weight:800;padding:0 14px;margin:0 0 13px}.navbtn{width:100%;display:flex;align-items:center;gap:12px;text-align:left;border:0;background:transparent;color:#aeb9c8;padding:13px;border-radius:12px;margin:3px 0;font-weight:650;font-size:13px}.navbtn.active,.navbtn:hover{color:white;background:#26364c}.navbtn .ico{width:20px;text-align:center;font-size:17px}.sidebarbottom{margin-top:auto;background:#1b2b43;border:1px solid #34435a;border-radius:15px;padding:17px}.sidebarbottom b{font-size:12px}.sidebarbottom p{color:#aab7c8;font-size:11px;line-height:1.65;margin:8px 0 0}.tinybadge{display:inline-flex;align-items:center;gap:6px;font-size:10px;color:#90dfc8;margin-bottom:10px}.dot{width:7px;height:7px;border-radius:50%;background:#4bd49d}.main{min-width:0}.topbar{height:79px;padding:0 42px;border-bottom:1px solid #e5e2d9;display:flex;align-items:center;justify-content:space-between;background:#fffcf7}.topbar .crumb{color:#728092;font-size:12px}.topbar .crumb strong{color:var(--ink)}.topright{display:flex;align-items:center;gap:12px}.pill{border:1px solid #e6e2db;border-radius:99px;padding:8px 12px;font-size:11px;color:#687483;background:white}.avatar{height:35px;width:35px;display:grid;place-items:center;border-radius:50%;background:#e5efe9;font-size:12px;font-weight:800;color:#15806a}.content{max-width:1320px;margin:0 auto;padding:34px 42px 65px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal)}.headline{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:10px 0 28px}.headline h1{margin:6px 0 7px;font-size:clamp(29px,3.5vw,43px);line-height:1.1;letter-spacing:-1.7px}.headline p{color:#798291;margin:0;font-size:14px}.outlinebtn{background:white;border:1px solid #dfdfd9;color:#34445a;padding:11px 16px;border-radius:10px;font-weight:700;font-size:12px}.outlinebtn:hover{border-color:var(--teal)}.scenario-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.scenario{border:1.5px solid #e9e8e2;border-radius:17px;padding:19px;text-align:left;background:#fffcf8;transition:.2s;min-height:155px;display:flex;flex-direction:column}.scenario:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.scenario.selected{border-color:var(--teal);box-shadow:0 0 0 3px #d9eee7;background:#fff}.scenario .num{height:30px;width:30px;border-radius:9px;background:#eaece8;display:grid;place-items:center;color:#477062;font-size:13px;font-weight:800}.scenario.selected .num{background:var(--teal);color:white}.scenario strong{margin-top:13px;font-size:14px}.scenario span.desc{margin:6px 0 12px;font-size:11px;color:#818994;line-height:1.5}.scenario .mini{margin-top:auto;font-size:11px;font-weight:800;color:var(--teal)}.scenario:nth-child(3) .mini{color:#c17a19}.workarea{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(350px,.95fr);gap:21px;margin-top:23px;align-items:start}.panel{background:white;border:1px solid #e9e7e1;border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.panel-head{padding:21px 25px;border-bottom:1px solid #edf0ef;display:flex;justify-content:space-between;align-items:center;gap:12px}.panel-head h2{font-size:16px;letter-spacing:-.35px;margin:0}.panel-head p{font-size:11px;color:#8b94a1;margin:5px 0 0}.tag{background:#eff4f0;color:#347765;padding:7px 10px;border-radius:99px;font-size:10px;font-weight:800;white-space:nowrap}.panel-body{padding:24px}.payee{display:flex;gap:14px;align-items:center;padding-bottom:21px;border-bottom:1px solid #eef0ee}.payee-icon{width:50px;height:50px;border-radius:14px;background:#edf2f0;color:var(--teal);display:grid;place-items:center;font-size:22px}.payee strong{font-size:15px}.sub{color:#89929e;font-size:11px;margin-top:5px}.payrow{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #f0f1ef;font-size:12px}.payrow span{color:#788493}.payrow strong{font-size:12px}.amount{font-size:37px;letter-spacing:-1.3px;font-weight:800;margin:16px 0 4px}.amount small{font-size:17px;color:#6a7988}.statusbox{border-radius:12px;padding:13px 15px;margin-top:15px;display:flex;align-items:center;gap:11px;background:#f3f6f5;font-size:12px;line-height:1.45}.statusbox.high{background:var(--amberbg);color:#7e5218}.statusbox.paid{background:var(--tealbg);color:#136d57}.statusbox.held{background:var(--redbg);color:#a63c36}.statusbox .symbol{font-size:20px}.primary{width:100%;border:0;border-radius:12px;background:var(--navy);color:white;font-weight:750;padding:15px 18px;font-size:13px}.primary:hover{background:#28405d}.primary.amber{background:var(--amber);color:#192940}.primary.teal{background:var(--teal)}.secondary{border:1px solid #d9e0df;background:white;border-radius:11px;padding:13px 15px;font-size:12px;color:#243549;font-weight:750}.secondary:hover{background:#f3f6f5}.btnrow{display:flex;gap:9px;margin-top:15px}.btnrow>*{flex:1}.risk-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.score{font-size:38px;font-weight:850;letter-spacing:-1.5px;color:var(--teal)}.score small{font-size:13px;font-weight:500;color:#8a94a1;letter-spacing:0}.risk-level{border-radius:7px;padding:7px 10px;font-size:10px;font-weight:800;background:var(--tealbg);color:var(--teal)}.risk-level.medium{background:#fff4dd;color:#aa791e}.risk-level.high{background:var(--redbg);color:var(--red)}.meter{height:9px;border-radius:99px;background:linear-gradient(90deg,#15977c 0 40%,#f4b44d 40% 85%,#e2645d 85% 100%);margin:16px 0 6px;position:relative}.meter:after{content:"";height:17px;width:5px;background:#16263a;border:2px solid white;border-radius:4px;position:absolute;left:calc(var(--score) * 1%);top:-4px;box-shadow:0 1px 5px #777}.ranges{display:flex;justify-content:space-between;color:#8c95a0;font-size:10px;margin-bottom:20px}.signal{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px solid #f0f1f1;font-size:12px}.signal .name{display:flex;align-items:center;gap:9px}.check{font-size:12px;color:var(--teal);background:#e8f5ef;border-radius:6px;width:20px;height:20px;display:grid;place-items:center}.points{color:var(--teal);font-weight:800}.sectiontitle{font-weight:800;font-size:12px;margin:22px 0 9px}.explain{font-size:11px;line-height:1.55;color:#83909a;margin:10px 0 0}.intervention{margin-top:21px;border-radius:18px;overflow:hidden;background:var(--navy);color:white;box-shadow:var(--shadow)}.intervention-head{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:20px 24px;border-bottom:1px solid #314057}.intervention-head h2{font-size:16px;margin:0}.intervention-head p{color:#a4b0be;font-size:11px;margin:5px 0 0}.intervention-body{padding:24px}.intervention .eyebrow{color:var(--amber);letter-spacing:1.5px}.story{font-size:16px;line-height:1.75;color:#f2f3f1;margin:14px 0 23px}.story small{color:#aec0cd;font-size:11px}.intervention .secondary{background:transparent;color:#fff;border-color:#6a7a8d}.intervention .secondary:hover{background:#2b4059}.block-warning{font-size:12px;background:#263850;border-radius:12px;padding:13px 14px;color:#c9d5dd;line-height:1.6}.contact-preview{margin-top:18px;background:#0b1f3f;border-radius:16px;padding:22px 22px 20px;color:#f3f5f8;border:1px solid #243754}.contact-preview .label{display:block;color:#ffb548;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}.contact-preview p{margin:0;font-size:13px;line-height:1.6;color:#f2f4f7}.contact-preview .preview-note{display:block;margin-top:18px;color:#b8c5d6;font-size:11px}.chat{display:flex;flex-direction:column;gap:11px;margin:16px 0}.bubble{padding:12px 15px;border-radius:13px;background:#263c57;font-size:12px;line-height:1.6;max-width:94%;animation:appear .25s ease-out}.bubble.caller{align-self:flex-end;background:#f2a73e;color:#1c2b3e}.bubble label{display:block;font-size:10px;font-weight:800;letter-spacing:.4px;margin-bottom:5px;opacity:.7}.callstatus{display:flex;align-items:center;justify-content:space-between;font-size:11px;padding:11px 13px;border-radius:10px;background:#21334b;margin-bottom:17px;color:#bbcad7}.callstatus .live{color:#ffcb76}.stepper{display:flex;gap:6px;padding:15px 0 0}.step{flex:1;background:#e9e8e3;height:5px;border-radius:5px}.step.done{background:var(--teal)}.progress-labels{display:flex;justify-content:space-between;margin:9px 0 0;color:#84909a;font-size:10px}.extras{display:grid;grid-template-columns:1fr 1fr;gap:19px;margin-top:22px}.extra{padding:24px}.extra h3{font-size:15px;margin:0 0 8px}.extra p{font-size:12px;color:#82909a;line-height:1.65;margin:0 0 17px}.toggleline{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px;font-weight:700}.toggle{appearance:none;width:43px;height:25px;border-radius:99px;background:#ccd3d6;position:relative;cursor:pointer;flex-shrink:0;transition:.2s}.toggle:after{content:"";position:absolute;width:19px;height:19px;background:#fff;border-radius:50%;left:3px;top:3px;transition:.2s}.toggle:checked{background:var(--teal)}.toggle:checked:after{transform:translateX(18px)}.summarybox{background:#f5f7f4;border-radius:10px;padding:13px;color:#677886;font-size:11px;line-height:1.7}.footer{margin-top:25px;font-size:11px;color:#99a0a5;text-align:center}.hidden{display:none!important}@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.toast{position:fixed;bottom:25px;right:25px;background:#14243a;color:white;max-width:340px;padding:13px 17px;border-radius:12px;box-shadow:0 15px 50px #0002;font-size:12px;opacity:0;pointer-events:none;transform:translateY(10px);transition:.2s;z-index:10}.toast.visible{opacity:1;transform:translateY(0)}.view{display:none}.view.active{display:block}.historyitem{display:flex;align-items:center;gap:12px;border-bottom:1px solid #edf0ed;padding:17px 2px}.historyitem:last-child{border:0}.historyitem .grow{flex:1}.historyitem b{font-size:13px}.historyitem small{font-size:11px;color:#93a0a7;display:block;margin-top:4px}.historyitem .out{font-size:13px;font-weight:800}.empty{background:#f6f7f4;border-radius:13px;padding:24px;color:#85919b;font-size:13px}.view-inner{max-width:850px}.settingsrow{padding:19px 0;border-bottom:1px solid #e7eae6;display:flex;justify-content:space-between;align-items:center;gap:20px}.settingsrow b{font-size:13px}.settingsrow p{font-size:11px;color:#8a959f;margin:5px 0 0}.input{border:1px solid #dce2de;padding:11px 12px;border-radius:9px;max-width:230px;width:100%;background:white;color:#243448}.info-stat{border-radius:16px;background:white;border:1px solid #e7eae5;padding:20px}.info-stat strong{font-size:28px;display:block;letter-spacing:-1px;color:var(--teal)}.info-stat span{font-size:11px;color:#85919d}@media(max-width:1120px){.layout{grid-template-columns:215px 1fr}.content{padding:30px 25px}.topbar{padding:0 25px}.workarea{grid-template-columns:1fr 1fr}.panel-body{padding:18px}.scenario{padding:15px}}@media(max-width:790px){.layout{display:block}.sidebar{padding:13px 15px;flex-direction:row;align-items:center;gap:10px}.sidebar .brand{padding:0}.sidebar nav{display:flex;gap:4px;margin-left:auto}.sidebar .navlabel,.sidebarbottom{display:none}.navbtn{margin:0;padding:10px;font-size:0}.navbtn .ico{font-size:18px}.topbar{height:58px}.topbar .pill{display:none}.content{padding:25px 16px}.headline{align-items:flex-start}.scenario-grid{gap:9px}.scenario{padding:13px;min-height:145px}.scenario strong{font-size:12px}.scenario span.desc{font-size:10px}.workarea{grid-template-columns:1fr}.extras{grid-template-columns:1fr}.intervention{margin-top:16px}}@media(max-width:500px){.headline h1{font-size:29px}.headline .outlinebtn{font-size:0;padding:11px}.headline .outlinebtn:before{content:"↻";font-size:18px}.scenario-grid{grid-template-columns:1fr}.scenario{min-height:unset}.scenario span.desc{margin:4px 0}.scenario .num{display:none}.scenario strong{margin-top:0}.panel-head{padding:19px}.intervention-body{padding:18px}.brand b{font-size:14px}}
+/* Medium-risk heads-up and optional scam-variant switch */
+.statusbox.medium{background:var(--amberbg);color:#7e5218}
+.scam-switch{margin-top:9px;width:100%;font-size:12px}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar"><div class="brand"><div class="brandmark">✦</div><div><b>Let Me Guess</b><small>Scam interrupter</small></div></div><nav aria-label="Main navigation"><div class="navlabel">Workspace</div><button class="navbtn active" data-view="demo"><span class="ico">▦</span> Live demo</button><button class="navbtn" data-view="activity"><span class="ico">▤</span> Activity</button><button class="navbtn" data-view="recovery"><span class="ico">✚</span> Recovery</button><button class="navbtn" data-view="settings"><span class="ico">⚙</span> Settings</button><button class="navbtn" data-view="about"><span class="ico">ⓘ</span> How it works</button></nav><div class="sidebarbottom"><div class="tinybadge"><span class="dot"></span> INTERACTIVE PROTOTYPE</div><b>Westpac Innovation & Coding Competition 2026</b><p>Sample accounts, illustrative risk rules and simulated conversations. No real transfers or calls.</p></div></aside>
+<div class="main"><header class="topbar"><div class="crumb">Prototype / <strong id="breadcrumb">Live demo</strong></div><div class="topright"><span class="pill">● Demo environment</span><span class="pill">Sample customer · Margaret</span><div class="avatar">MG</div></div></header>
+<main class="content">
+<section class="view active" id="view-demo"><div class="eyebrow">Interactive banking experience</div><div class="headline"><div><h1>Spot the story. Stop the scam.</h1><p>Explore how three different payments trigger three different outcomes.</p></div><button class="outlinebtn" id="reset">↻ &nbsp;Reset demo</button></div>
+<div class="scenario-grid" role="group" aria-label="Choose a payment scenario"><button class="scenario selected" data-scenario="rent"><span class="num">01</span><strong>Rent, as usual</strong><span class="desc">Known payee, normal amount. A smooth payment.</span><span class="mini">Risk 5 · Low</span></button><button class="scenario" data-scenario="builder"><span class="num">02</span><strong>A wrong guess</strong><span class="desc">Legitimate one-off payment mistakenly flagged.</span><span class="mini">Risk 72 · Medium</span></button><button class="scenario" data-scenario="scam"><span class="num">03</span><strong>The scam call</strong><span class="desc">New payee, raised limit, and a caller applying pressure.</span><span class="mini">Risk 85–90 · High</span></button></div>
+<div class="workarea"><div><section class="panel"><div class="panel-head"><div><h2>Payment review</h2><p>Everyday account ·•• 4821</p></div><span class="tag" id="payment-tag">Ready to pay</span></div><div class="panel-body"><div class="payee"><div class="payee-icon" id="payee-icon">⌂</div><div><strong id="payee-name">Cityside Property</strong><div class="sub" id="payee-meta">Saved payee · Rent payment</div></div></div><div class="amount"><small>AUD </small><span id="amount">2,200.00</span></div><div class="sub">From Everyday Account ·•• 4821</div><div class="payrow"><span>To account</span><strong id="account">•••• •••• 1822</strong></div><div class="payrow"><span>Reference</span><strong id="reference">Monthly rent</strong></div><div class="payrow"><span>Payment method</span><strong>Bank transfer</strong></div><div class="statusbox" id="pay-status"><span class="symbol">◉</span><span id="pay-status-text">Ready to review. No transfer has been made.</span></div><div id="payment-actions" class="btnrow"><button class="primary" id="pay-btn">Review and pay →</button></div><div class="stepper" aria-label="Flow progress"><div class="step done" id="step1"></div><div class="step" id="step2"></div><div class="step" id="step3"></div><div class="step" id="step4"></div><div class="step" id="step5"></div></div><div class="progress-labels"><span>Score</span><span>Pause</span><span>Story</span><span>Answer</span><span>AI joins</span></div></div></section>
+<section class="intervention hidden" id="intervention"><div class="intervention-head"><div><h2 id="intervention-title">Before you pay</h2><p id="intervention-sub">We noticed a pattern worth checking.</p></div><span class="tag" id="intervention-tag" style="background:#fff0d2;color:#935d14">Payment paused</span></div><div class="intervention-body" id="intervention-content"></div></section></div>
+<div><section class="panel"><div class="panel-head"><div><h2>Behind the decision</h2><p>Illustrative explainable risk engine</p></div><span class="tag">SIMULATED SCORING</span></div><div class="panel-body"><div class="risk-head"><div><div class="eyebrow" style="font-size:10px;color:#7d8b95">Risk score</div><div class="score"><span id="risk-number">5</span><small> / 100</small></div></div><span class="risk-level" id="risk-level">LOW RISK</span></div><div class="meter" id="meter" style="--score:5"></div><div class="ranges"><span>0 · Low</span><span>40 · Medium</span><span>85 · High</span><span>100</span></div><div class="sectiontitle">Signals detected</div><div id="signals"></div><p class="explain">Demo scoring: 0–39 proceeds normally; 40–84 shows a one-line heads-up; 85–100 pauses and presents the story.</p><div class="sectiontitle">Why this matters</div><div class="summarybox" id="why">A familiar payee with a routine amount rarely needs extra checks.</div></div></section>
+<section class="panel" style="margin-top:20px"><div class="panel-head"><div><h2>Protection at a glance</h2><p>Customer-led controls</p></div><span style="font-size:20px">◇</span></div><div class="panel-body" style="padding-top:13px"><div class="payrow"><span>Personalised scam story</span><strong>✓</strong></div><div class="payrow"><span>Bank AI call / chat support</span><strong>✓</strong></div><div class="payrow"><span>Trusted-contact notification</span><strong id="contact-indicator">Opt-in</strong></div><div class="payrow" style="border:0"><span>Real money movement</span><strong>No · Demo only</strong></div></div></section></div></div>
+<div class="extras"><section class="panel extra"><h3>◈ A second pair of eyes</h3><p>With your permission, a trusted contact can be alerted when you recognise a high-risk scam story or do not respond. They never see your amount or balance, and cannot approve a payment.</p><div class="toggleline"><span>Allow trusted-contact alerts</span><input type="checkbox" class="toggle" id="contact-toggle" aria-label="Allow trusted-contact alerts"/></div><div class="sub" style="margin-top:12px" id="contact-help">Alerts are off. You can opt in any time.</div></section><section class="panel extra"><h3>▧ Human-readable decisions</h3><p>Rather than asking predictable yes/no questions, the app explains what looks unusual and lets customers react. Staff receive a summary if a suspected scam is escalated.</p><div class="summarybox" id="staff-mini">No case created yet. Try “The scam call” to explore the intervention.</div></section></div>
+<div class="footer">Let Me Guess · Interactive hackathon prototype · Illustrative detection rules and scripted AI simulation, not a Westpac product.</div></section>
+<section class="view" id="view-activity"><div class="view-inner"><div class="eyebrow">Your activity</div><div class="headline"><div><h1>Payment activity</h1><p>Payments and interventions completed during this demo session.</p></div></div><div class="panel"><div class="panel-head"><h2>Session timeline</h2><button class="outlinebtn" id="clear-history">Clear history</button></div><div class="panel-body" id="history"><div class="empty">No payments or interventions yet. Start in Live demo.</div></div></div></div></section>
+<section class="view" id="view-settings"><div class="view-inner"><div class="eyebrow">Your preferences</div><div class="headline"><div><h1>Protection settings</h1><p>Control your demonstration experience.</p></div></div><div class="panel"><div class="panel-body"><div class="settingsrow"><div><b>Trusted contact name</b><p>Chosen in advance by the customer.</p></div><input id="contact-name" class="input" maxlength="40" value="Alex" aria-label="Trusted contact name"/></div><div class="settingsrow"><div><b>Trusted-contact alerts</b><p>Only for high-risk situations and only with your consent.</p></div><input type="checkbox" class="toggle" id="settings-contact-toggle" aria-label="Trusted-contact alerts"/></div><div class="settingsrow"><div><b>Demo scenarios</b><p>Uses simulated risk signals, not your financial data.</p></div><span class="tag">Sample data only</span></div><div class="settingsrow" style="border:0"><div><b>AI call access</b><p>Simulated call transcript; no microphone or telephone permissions.</p></div><span class="tag">Simulation</span></div></div></div></div></section>
+<section class="view" id="view-about"><div class="view-inner"><div class="eyebrow">The idea</div><div class="headline"><div><h1>How Let Me Guess works</h1><p>Tell the story. Join the call. Stop the scam.</p></div></div><div class="scenario-grid" style="grid-template-columns:repeat(3,1fr)"><div class="info-stat"><strong>01</strong><b>Score and pause</b><p class="explain">Signals and destination patterns flag risky transfers before money leaves.</p></div><div class="info-stat"><strong>02</strong><b>Tell the story</b><p class="explain">A personalised narrative reveals patterns a scammer cannot easily coach around.</p></div><div class="info-stat"><strong>03</strong><b>Join the call</b><p class="explain">At the customer’s request, the bank’s assistant questions the caller or joins a text chat.</p></div></div><div class="panel" style="margin-top:22px"><div class="panel-body"><h2 style="font-size:18px">Five-step intervention</h2><p style="line-height:1.9;color:#687a89;font-size:13px">1. <b>Score</b> payment risk using signals and the destination.<br>2. <b>Pause</b> high-risk transfers.<br>3. <b>Story</b> explains the likely scam pattern.<br>4. <b>Answer</b> — “Not my situation” lets you independently verify before continuing; “That’s scarily close” holds it. An unanswered high-risk prompt can be simulated.<br>5. <b>AI joins</b> the customer’s call or chat on request.</p><div class="summarybox">Design source: “Let Me Guess” — Scam Interrupter Westpac Hackathon Pitch, 2026. The pitch proposes a prototype with a live LLM and voice agent; this standalone HTML reproduces the user experience using local scripted simulations.</div></div></div></div></section>
+<section class="view" id="view-recovery"><div class="view-inner"><div class="eyebrow">After a scam</div><div class="headline"><div><h1>Recovery assistant</h1><p>Record what happened, draft reports and track recovery. Sample case only. Nothing is sent.</p></div></div>
+<div class="workarea" style="margin-top:0"><section class="panel"><div class="panel-head"><div><h2>1. What happened</h2><p>Sample details, editable</p></div><span class="tag">Step 1 of 4</span></div><div class="panel-body">
+<label class="sub" for="rc-type">Type of contact</label><select id="rc-type" class="input" style="max-width:100%;margin:6px 0 14px"><option>Caller claimed to be from my bank's fraud team</option><option>Caller claimed to be police</option><option>Message from someone I thought was family</option><option>Online investment or crypto opportunity</option><option>Other</option></select>
+<label class="sub" for="rc-amount">Amount sent (AUD)</label><input id="rc-amount" class="input" style="max-width:100%;margin:6px 0 14px" value="8000">
+<label class="sub" for="rc-payee">Name on the account paid</label><input id="rc-payee" class="input" style="max-width:100%;margin:6px 0 14px" value="Jordan M. (demo)">
+<label class="sub" for="rc-summary">What they said, in your words</label><textarea id="rc-summary" class="input" style="max-width:100%;min-height:90px;margin:6px 0 14px;font:inherit">Caller said my account was being used for fraud and I had to move the money to a safe account today. They asked me not to tell the branch.</textarea>
+<div class="sectiontitle">Evidence you have</div>
+<div class="payrow"><span>Screenshot of the payment receipt</span><input type="checkbox" class="rc-ev" checked></div>
+<div class="payrow"><span>Messages from the caller</span><input type="checkbox" class="rc-ev" checked></div>
+<div class="payrow" style="border:0"><span>Call log showing the number</span><input type="checkbox" class="rc-ev"></div>
+<button class="primary teal" id="rc-build" style="margin-top:16px">Build timeline and drafts →</button>
+</div></section>
+<section class="panel"><div class="panel-head"><div><h2>2. Timeline</h2><p>Built from your entries. Gaps are flagged.</p></div><span class="tag">Step 2 of 4</span></div><div class="panel-body"><ol id="rc-timeline" style="padding-left:18px;font-size:12px;line-height:1.7;color:#4a5866;margin:0"></ol></div></section></div>
+<section class="panel" style="margin-top:21px"><div class="panel-head"><div><h2>3. Drafts</h2><p>Each fact is tagged with the entry it came from. Check every line before signing.</p></div><span class="tag">Step 3 of 4</span></div><div class="panel-body" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+<div><b style="font-size:12px">Police report</b><pre id="rc-police" class="summarybox" style="white-space:pre-wrap;font-family:inherit;margin-top:8px"></pre></div>
+<div><b style="font-size:12px">Scam report</b><pre id="rc-scam" class="summarybox" style="white-space:pre-wrap;font-family:inherit;margin-top:8px"></pre></div>
+<div><b style="font-size:12px">Receiving-bank request</b><pre id="rc-bank" class="summarybox" style="white-space:pre-wrap;font-family:inherit;margin-top:8px"></pre></div>
+</div>
+<div class="panel-body" style="border-top:1px solid #edf0ef"><label class="toggleline"><span>I have checked every draft and the facts are correct</span><input type="checkbox" class="toggle" id="rc-review" aria-label="Drafts checked"></label><button class="primary" id="rc-sign" style="margin-top:14px">Sign and send (demo: nothing is sent)</button><div class="sub" id="rc-signmsg" style="margin-top:10px"></div></div></section>
+<section class="panel" style="margin-top:21px"><div class="panel-head"><div><h2>4. Recovery tracker</h2><p>Requests to other banks. Overdue items are flagged.</p></div><span class="tag">Step 4 of 4</span></div><div class="panel-body" style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px"><thead><tr><th style="text-align:left;padding:8px 6px;color:#8b94a1;font-size:10px;text-transform:uppercase;letter-spacing:1px">Institution</th><th style="text-align:left;padding:8px 6px;color:#8b94a1;font-size:10px;text-transform:uppercase;letter-spacing:1px">Sent</th><th style="text-align:left;padding:8px 6px;color:#8b94a1;font-size:10px;text-transform:uppercase;letter-spacing:1px">Respond by</th><th style="text-align:left;padding:8px 6px;color:#8b94a1;font-size:10px;text-transform:uppercase;letter-spacing:1px">Status</th></tr></thead><tbody id="rc-tracker"></tbody></table></div></section>
+<div class="extras"><section class="panel extra"><h3>Beware recovery scams</h3><p>Anyone charging a fee to get your money back, or claiming to be police or a recovery agency, may be another scammer. Don't pay anyone, and don't share codes or remote access.</p><button class="secondary" id="rc-support">Request a follow-up (demo)</button><div class="sub" id="rc-supportmsg" style="margin-top:10px"></div></section><section class="panel extra"><h3>Support services</h3><p>[Verified identity and cyber support service: number and link]<br>[Verified police reporting service: number and link]<br>[Verified financial counselling or emotional support: number and link]</p><div class="sub">Placeholders only. Check any number against an official source before real use.</div></section></div>
+</div></section>
+</main></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+  'use strict';
+
+  // All data is local and illustrative; no payment, SMS, telephone or AI API is called.
+  const scenarios = {
+    rent: {
+      name: 'Cityside Property', meta: 'Saved payee · Rent payment', icon: '⌂',
+      amount: '2,200.00', account: '•••• •••• 1822', reference: 'Monthly rent',
+      score: 5, signals: [['Known payee', 0], ['Usual payment amount', 5]],
+      why: 'A familiar payee and routine amount look consistent with your payment history. The transfer proceeds without interruption.'
+    },
+    builder: {
+      name: 'Northside Builders', meta: 'New payee · Home repairs', icon: '▤',
+      amount: '8,000.00', account: '•••• •••• 7340', reference: 'Renovation deposit',
+      score: 72, signals: [['New payee', 25], ['Amount far above usual', 25], ['One-off transfer', 22]],
+      why: 'The first payment to a builder is unusual. It resembles some scam patterns, but unusual does not always mean fraudulent.'
+    }
+  };
+
+  const scamVariants = [
+    {
+      id: 'romance', title: 'Romance / emergency scam',
+      name: 'Jordan M.', meta: 'New personal payee · Added today', icon: '♙',
+      amount: '8,000.00', account: '•••• •••• 0918', reference: 'Urgent support',
+      score: 85,
+      signals: [['New payee, added today', 25], ['Daily limit just raised', 20], ['$8,000, far above usual', 25], ['On a phone call while paying', 15]],
+      why: 'A new personal payee, raised transfer limit, unusually large amount and live phone pressure are consistent with an emergency or romance scam.',
+      story: 'Before you send this $8,000, let me guess. You met someone online but have not met in person. Now they say there is an emergency and need money urgently. They also asked you to keep the transfer private. How close am I?',
+      callerCall: 'Please, I really need the money today. You promised you would help me.',
+      callerText: 'I need the transfer right now. Please do not tell anyone.',
+      challenge: 'Can you provide independent proof of your identity and emergency, without sending a link or asking for money?',
+      outcome: 'The caller declined independent verification and ended the conversation.'
+    },
+    {
+      id: 'bank', title: 'Bank impersonation scam',
+      name: 'Secure Transfer Account', meta: 'New destination · Alleged safe account', icon: '▣',
+      amount: '8,000.00', account: '•••• •••• 6314', reference: 'Account protection',
+      score: 90,
+      signals: [['New destination account', 30], ['Daily limit just raised', 20], ['Urgent safe-account request', 25], ['Caller claiming to be the bank', 15]],
+      why: 'A caller claiming to be from the bank is urging a transfer to a newly supplied safe account. Real protection should be verified through the bank’s official channels.',
+      story: 'Before you send this $8,000, let me guess. Someone says they are from your bank’s fraud team. They claim your savings are at risk and insist you must move money to a new “safe account” immediately. How close am I?',
+      callerCall: 'I am from the bank fraud team. Transfer it now or your money will be lost.',
+      callerText: 'This is the bank security team. Move the funds to our safe account now.',
+      challenge: 'A legitimate bank will not ask you to transfer money to a new safe account. Please end this conversation and verify through the official banking app.',
+      outcome: 'The caller could not provide an independently verifiable bank contact and disconnected.'
+    },
+    {
+      id: 'investment', title: 'Investment scam',
+      name: 'Global Investment Group', meta: 'New investment payee · Added today', icon: '◇',
+      amount: '8,000.00', account: '•••• •••• 4579', reference: 'Investment deposit',
+      score: 88,
+      signals: [['New investment payee', 25], ['Unusually large deposit', 25], ['Guaranteed high returns', 23], ['Time-pressure call', 15]],
+      why: 'A new destination, unusually large deposit, promised high returns and time pressure suggest an investment scam risk.',
+      story: 'Before you send this $8,000, let me guess. An online investment adviser promises unusually high returns and says you will miss out unless you pay a deposit today. They may discourage you from checking with anyone else. How close am I?',
+      callerCall: 'This is a guaranteed opportunity. If you delay, you lose your place.',
+      callerText: 'Only a few minutes left. Send the deposit to lock in the return.',
+      challenge: 'Please provide independently verifiable licensing and product documents. Guaranteed returns with immediate payment pressure are a warning sign.',
+      outcome: 'The supposed adviser refused verification and left the conversation.'
+    }
+  ];
+
+  const $ = id => document.getElementById(id);
+  let current = 'rent';
+  let activeScam = null;
+  let stage = 'ready';
+  let callTimers = [];
+  let history = [];
+  let contactConsent = false;
+  let handledScam = false;
+
+  function currentScenario() { return current === 'scam' ? activeScam : scenarios[current]; }
+
+  function randomScam(excludeId = null) {
+    const options = scamVariants.filter(item => item.id !== excludeId);
+    return options[Math.floor(Math.random() * options.length)];
+  }
+
+  function toast(msg) {
+    const el = $('toast');
+    el.textContent = msg;
+    el.classList.add('visible');
+    clearTimeout(toast.t);
+    toast.t = setTimeout(() => el.classList.remove('visible'), 3300);
+  }
+
+  function escapeHTML(str) {
+    return String(str).replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+  }
+
+  function addHistory(title, desc, amount, status) {
+    history.unshift({
+      title, desc, amount, status,
+      time: new Date().toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit' })
+    });
+    renderHistory();
+  }
+
+  function renderHistory() {
+    $('history').innerHTML = history.length
+      ? history.map(h => `<div class="historyitem"><div class="payee-icon" style="height:40px;width:40px;font-size:16px">${h.status === 'paid' ? '✓' : '!'}</div><div class="grow"><b>${escapeHTML(h.title)}</b><small>${escapeHTML(h.desc)} · ${escapeHTML(h.time)}</small></div><div style="text-align:right"><span class="out">$${escapeHTML(h.amount)}</span><small style="color:${h.status === 'paid' ? '#16816b' : '#b65d32'}">${h.status === 'paid' ? 'Paid' : 'Held'}</small></div></div>`).join('')
+      : '<div class="empty">No payments or interventions yet. Start in Live demo.</div>';
+  }
+
+  function stopTimers() { callTimers.forEach(clearTimeout); callTimers = []; }
+
+  function stageSteps(count) {
+    for (let i = 1; i <= 5; i++) $('step' + i).classList.toggle('done', i <= count);
+  }
+
+  function setStatus(kind, message) {
+    $('pay-status').className = 'statusbox' + (kind ? ' ' + kind : '');
+    $('pay-status-text').textContent = message;
+    $('payment-tag').textContent = kind === 'paid' ? 'Paid' :
+      kind === 'held' ? 'On hold' :
+      kind === 'high' ? 'Review required' :
+      kind === 'medium' ? 'Heads-up' : 'Ready to pay';
+  }
+
+  function renderScenario(key, reroll = false) {
+    stopTimers();
+    // Each new selection of Scam Call draws another case. It remains locked
+    // throughout payment, story, chat and case summary until the next reroll.
+    if (key === 'scam' && (current !== 'scam' || reroll || !activeScam)) {
+      activeScam = randomScam(activeScam?.id);
+    }
+    current = key;
+    stage = 'ready';
+    handledScam = false;
+    const s = currentScenario();
+
+    document.querySelectorAll('.scenario').forEach(b => {
+      const selected = b.dataset.scenario === key;
+      b.classList.toggle('selected', selected);
+      b.setAttribute('aria-pressed', String(selected));
+    });
+    $('payee-icon').textContent = s.icon;
+    $('payee-name').textContent = s.name;
+    $('payee-meta').textContent = s.meta;
+    $('amount').textContent = s.amount;
+    $('account').textContent = s.account;
+    $('reference').textContent = s.reference;
+    $('risk-number').textContent = s.score;
+    $('meter').style.setProperty('--score', s.score);
+    $('risk-level').textContent = s.score >= 85 ? 'HIGH RISK' : s.score >= 40 ? 'MEDIUM RISK' : 'LOW RISK';
+    $('risk-level').className = 'risk-level ' + (s.score >= 85 ? 'high' : s.score >= 40 ? 'medium' : '');
+    $('signals').innerHTML = s.signals.map(([n, p]) =>
+      `<div class="signal"><div class="name"><span class="check">✓</span><span>${escapeHTML(n)}</span></div><span class="points">${p ? '+' + p : '✓'}</span></div>`
+    ).join('');
+    $('why').textContent = s.why;
+    $('intervention').classList.add('hidden');
+    $('payment-actions').innerHTML = '<button class="primary" id="pay-btn">Review and pay →</button>' +
+      (key === 'scam' ? '<button class="secondary scam-switch" id="reroll-scam" type="button">↻ Try another scam</button>' : '');
+    $('pay-btn').onclick = startPayment;
+    if (key === 'scam') $('reroll-scam').onclick = () => renderScenario('scam', true);
+    setStatus('', 'Ready to review. No transfer has been made.');
+    stageSteps(1);
+    $('staff-mini').textContent = key === 'scam'
+      ? `Selected demo: ${s.title}. No case created yet.`
+      : 'No case created yet. Try “The scam call” to explore the intervention.';
+  }
+
+  function pay() {
+    stage = 'paid';
+    setStatus('paid', 'Payment completed successfully in this simulation. No real money has moved.');
+    $('payment-actions').innerHTML = '<button class="secondary" id="again">Try this scenario again ↻</button>';
+    $('again').onclick = () => renderScenario(current);
+    $('intervention').classList.add('hidden');
+    // A normal payment or medium heads-up does not pretend to complete an AI call.
+    stageSteps(current === 'rent' ? 1 : current === 'builder' ? 2 : 4);
+    const s = currentScenario();
+    addHistory(s.name, 'Demo bank transfer · Completed', s.amount, 'paid');
+    toast('Demo payment marked as paid');
+  }
+
+  function startPayment() {
+    if (stage !== 'ready') return;
+    const s = currentScenario();
+    if (s.score < 40) { pay(); return; }
+
+    // Medium risk: ONLY one-line heads-up; no story or AI intervention.
+    if (s.score < 85) {
+      stage = 'heads-up';
+      stageSteps(2);
+      setStatus('medium', 'Heads-up: This is a new payee and an unusually large payment. Verify their details before paying.');
+      $('payment-actions').innerHTML = '<button class="primary" id="continue-pay">Continue demo payment →</button><button class="secondary" id="cancel-medium">Cancel</button>';
+      $('continue-pay').onclick = pay;
+      $('cancel-medium').onclick = () => holdPayment('Customer cancelled after medium-risk heads-up');
+      return;
+    }
+
+    stage = 'story';
+    stageSteps(3);
+    setStatus('high', 'Payment paused for a personalised safety check. No money has left your account.');
+    $('payment-actions').innerHTML = '<button class="secondary" disabled>Transfer paused for review</button>';
+    $('intervention').classList.remove('hidden');
+    $('intervention-title').textContent = 'Before you pay';
+    $('intervention-sub').textContent = 'Your bank noticed an unusual combination of signals.';
+    $('intervention-tag').textContent = 'Payment paused';
+    $('intervention-content').innerHTML = `<div class="eyebrow">Let me guess · ${escapeHTML(s.title)}</div><p class="story">${escapeHTML(s.story)}</p><div class="btnrow"><button id="close-match" class="primary amber">That's scarily close</button><button id="not-my-story" class="secondary">Not my situation</button></div><div class="btnrow"><button id="no-response" class="secondary">Simulate no response</button></div><p style="font-size:10px;color:#9eafbd;line-height:1.6;margin-top:17px">Pattern-based warning, not an accusation. “Simulate no response” is a demo action, not an actual timeout.</p>`;
+    $('close-match').onclick = recognise;
+    $('not-my-story').onclick = notMySituation;
+    $('no-response').onclick = simulateNoResponse;
+    toast('Safety check: your transfer is paused');
+  }
+
+  function notMySituation() {
+    stage = 'verify';
+    stageSteps(4);
+    $('intervention-title').textContent = 'Thanks for checking';
+    $('intervention-sub').textContent = 'Please confirm that you have independently verified the recipient.';
+    $('intervention-content').innerHTML = '<div class="eyebrow">Customer response</div><p class="story">You said this story does not match your situation. If you know the payee and have verified their details using a trusted channel, you can continue.</p><div class="block-warning">Never rely only on a phone number or link supplied in a suspicious message.</div><div class="btnrow"><button class="primary amber" id="confirm-pay">Confirm demo payment</button><button class="secondary" id="go-back">Go back</button></div>';
+    $('confirm-pay').onclick = pay;
+    $('go-back').onclick = startStoryAgain;
+  }
+
+  function startStoryAgain() { stage = 'ready'; startPayment(); }
+
+  function trustedContactPreviewHTML(name) {
+    return `<div class="contact-preview"><span class="label">Text message to ${escapeHTML(name)}:</span><p>Margaret has named you as her trusted contact. A payment she is making has been paused because it matches a known scam pattern. Please call her on the number you already have. We will never text you a link.</p><small class="preview-note">Simulated preview · No SMS sent</small></div>`;
+  }
+
+  function showTrustedContactPreview(name) {
+    const slot = $('trusted-contact-preview-slot');
+    if (slot) slot.innerHTML = trustedContactPreviewHTML(name);
+  }
+
+  function notifyContact(reason) {
+    // This only shows a demo notification. It never accesses contacts or sends an SMS.
+    const name = $('contact-name').value.trim() || 'your trusted contact';
+    const sampleText = 'Your bank: Margaret has named you as her trusted contact. A payment she is making has been paused because it matches a known scam pattern. Please call her on the number you already have. We will never text you a link.';
+    $('contact-help').textContent = `Simulated alert for ${name} (${reason}). No SMS was sent.`;
+    $('staff-mini').textContent = `TRUSTED CONTACT · Simulated alert to ${name} because of ${reason}. Message: ${sampleText}`;
+    showTrustedContactPreview(name);
+    toast(`Simulated trusted-contact alert to ${name} · No SMS sent`);
+  }
+
+  function maybeNotifyContact(reason) {
+    if (contactConsent && currentScenario().score >= 85) notifyContact(reason);
+  }
+
+  function recognise() {
+    stage = 'recognised';
+    stageSteps(4);
+    setStatus('held', 'Transfer held for your safety. No money has moved.');
+    $('intervention-title').textContent = 'You are not alone';
+    $('intervention-sub').textContent = 'Let the bank’s assistant help you challenge the story.';
+    $('intervention-content').innerHTML = '<div class="eyebrow">You recognised the pattern</div><p class="story">Thank you for telling us. We’ll keep this transfer on hold. You can invite the bank’s assistant into the conversation, or cancel this payment now.</p><div id="trusted-contact-preview-slot"></div><div class="btnrow"><button class="primary amber" id="join-call">☎ &nbsp;Join the call</button><button class="secondary" id="join-chat">◉ &nbsp;Join text chat</button></div><div class="btnrow"><button class="secondary" id="cancel-pay">Cancel transfer</button></div><p class="explain" style="color:#b6c5ce">Call and chat are scripted demonstrations; no external conversation is accessed.</p>';
+    $('join-call').onclick = () => joinConversation('call');
+    $('join-chat').onclick = () => joinConversation('text');
+    $('cancel-pay').onclick = () => holdPayment('Customer cancelled a suspicious transfer');
+    maybeNotifyContact('customer recognised the scam story');
+  }
+
+  function simulateNoResponse() {
+    if (stage !== 'story') return;
+    stage = 'no-response';
+    stageSteps(4);
+    setStatus('held', 'No response simulated. The high-risk transfer remains on hold.');
+    $('intervention-title').textContent = 'No response · Simulated';
+    $('intervention-sub').textContent = 'The payment is still paused; no real timeout or SMS occurred.';
+    $('intervention-content').innerHTML = '<div class="eyebrow">Demo: customer did not respond</div><p class="story">This simulates an unanswered high-risk safety prompt. A trusted contact is alerted only if the customer opted in.</p><div id="trusted-contact-preview-slot"></div><div class="btnrow"><button id="no-response-cancel" class="primary amber">Cancel transfer</button><button id="no-response-back" class="secondary">Back to story</button></div>';
+    $('no-response-cancel').onclick = () => holdPayment('Unanswered high-risk safety prompt · Simulated');
+    $('no-response-back').onclick = startStoryAgain;
+    maybeNotifyContact('no response to the high-risk prompt');
+    if (!contactConsent) toast('No response simulated · Trusted-contact alerts are off');
+  }
+
+  function joinConversation(mode) {
+    stopTimers();
+    stage = 'conversation';
+    stageSteps(5);
+    const s = currentScenario();
+    $('intervention-title').textContent = mode === 'call' ? 'Bank assistant joined the call' : 'Bank assistant joined the chat';
+    $('intervention-sub').textContent = `${s.title} · Scripted demo challenge.`;
+    $('intervention-content').innerHTML = `<div class="callstatus"><span><span class="live">●</span> &nbsp;${mode === 'call' ? 'Three-way call · Simulated' : 'Group text chat · Simulated'}</span><span id="call-progress">Connecting…</span></div><div class="chat" id="chat"></div><div id="call-outcome"></div>`;
+    const lines = [
+      ['Bank assistant', 'Hello, I’m the bank’s assistant. The customer asked me to join. Who’s calling?', 'assistant'],
+      ['Caller', mode === 'call' ? s.callerCall : s.callerText, 'caller'],
+      ['Bank assistant', s.challenge, 'assistant'],
+      ['System', s.outcome, 'assistant']
+    ];
+    lines.forEach((line, i) => {
+      const t = setTimeout(() => {
+        const chat = $('chat');
+        if (!chat) return;
+        chat.insertAdjacentHTML('beforeend', `<div class="bubble ${line[2] === 'caller' ? 'caller' : ''}"><label>${escapeHTML(line[0])}</label>${escapeHTML(line[1])}</div>`);
+        $('call-progress').textContent = i === 3 ? 'Disconnected' : 'AI assisting… (scripted)';
+        if (i === 3) finishCall(mode);
+      }, 650 + i * 1700);
+      callTimers.push(t);
+    });
+  }
+
+  function finishCall(mode) {
+    handledScam = true;
+    const s = currentScenario();
+    setStatus('held', 'Possible scam: demo payment held and scripted case summary prepared.');
+    $('call-outcome').innerHTML = '<div class="block-warning" style="margin-top:17px">⚑ &nbsp;Possible scam pattern. The caller could not be independently verified. The demo transfer remains on hold.</div><div class="btnrow"><button class="primary amber" id="finish-cancel">Cancel payment &amp; show report</button><button class="secondary" id="view-summary">View staff summary</button></div>';
+    $('finish-cancel').onclick = () => holdPayment('Possible scam · caller could not be independently verified');
+    $('view-summary').onclick = () => {
+      $('staff-mini').textContent = `DEMO CASE SUMMARY · ${s.title}. High-risk $${s.amount} transfer. Signals: ${s.signals.map(x => x[0]).join('; ')}. Customer recognised scam narrative. Scripted caller declined verification. Payment held for review.`;
+      toast('Demo staff summary displayed below');
+    };
+    $('staff-mini').textContent = 'Demo case ready: high-risk transfer held after scripted caller verification failed. Open “View staff summary” for details.';
+    addHistory(s.name, `${mode === 'call' ? 'Scripted AI call' : 'Scripted AI chat'} intervention · Held`, s.amount, 'held');
+    toast('Possible scam interrupted · Demo transfer held');
+  }
+
+  function holdPayment(reason) {
+    stopTimers();
+    stage = 'held';
+    const s = currentScenario();
+    setStatus('held', 'Payment cancelled / held in the demo. No funds were transferred.');
+    $('intervention').classList.remove('hidden');
+    $('intervention-title').textContent = 'Payment protected';
+    $('intervention-sub').textContent = 'You stopped the transfer before any money left.';
+    $('intervention-tag').textContent = 'Demo payment stopped';
+    $('intervention-content').innerHTML = `<div class="eyebrow">Intervention complete</div><p class="story">This demo transfer has been stopped. If this were a real concern, contact your bank through the official app or a verified phone number.</p><div class="block-warning">${escapeHTML(reason)}</div><div class="btnrow"><button class="primary amber" id="try-again">Try another scenario →</button></div>`;
+    $('try-again').onclick = () => renderScenario('rent');
+    $('payment-actions').innerHTML = '<button class="secondary" id="restart-current">Restart this scenario ↻</button>';
+    $('restart-current').onclick = () => renderScenario(current);
+    $('staff-mini').textContent = `Demo case summary: ${reason}. Risk ${s.score}/100. Recipient ${s.name}. Payment stopped.`;
+    if (!handledScam) addHistory(s.name, reason, s.amount, 'held');
+    handledScam = true;
+    toast('Demo transfer stopped');
+  }
+
+  function setContact(value) {
+    contactConsent = !!value;
+    $('contact-toggle').checked = contactConsent;
+    $('settings-contact-toggle').checked = contactConsent;
+    $('contact-indicator').textContent = contactConsent ? 'Enabled' : 'Opt-in';
+    $('contact-help').textContent = contactConsent
+      ? 'Enabled. In high-risk cases, a simulated SMS preview appears inside the intervention after you recognise the scam or simulate no response.'
+      : 'Alerts are off. You can opt in any time.';
+  }
+
+  $('contact-toggle').onchange = e => setContact(e.target.checked);
+  $('settings-contact-toggle').onchange = e => setContact(e.target.checked);
+  $('contact-name').onchange = () => toast('Trusted contact preference saved for this session');
+  $('reset').onclick = () => renderScenario('rent');
+  document.querySelectorAll('.scenario').forEach(el => el.onclick = () => renderScenario(el.dataset.scenario, el.dataset.scenario === 'scam'));
+  document.querySelectorAll('.navbtn').forEach(btn => btn.onclick = () => {
+    document.querySelectorAll('.navbtn').forEach(x => x.classList.toggle('active', x === btn));
+    document.querySelectorAll('.view').forEach(x => x.classList.toggle('active', x.id === 'view-' + btn.dataset.view));
+    $('breadcrumb').textContent = btn.textContent.trim();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  $('clear-history').onclick = () => { history = []; renderHistory(); toast('Demo activity cleared'); };
+  renderScenario('rent');
+})();
+</script>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const td='padding:10px 6px;border-bottom:1px solid #edf0ef;text-align:left;vertical-align:top';
+const tracker=[
+  {inst:'Demo Bank B (receiving)',sent:'15 Nov, 15:05',by:'15 Nov, 17:05',due:new Date('2026-11-15T17:05:00+10:00'),status:'Pending'},
+  {inst:'Demo Payments Hub',sent:'15 Nov, 15:20',by:'16 Nov, 15:20',due:new Date('2026-11-16T15:20:00+10:00'),status:'Hold placed'}
+];
+const statuses=['Pending','Hold placed','Funds returned','Declined','No response'];
+function renderTracker(){
+  const now=new Date();
+  $('rc-tracker').innerHTML=tracker.map((r,i)=>{
+    const overdue=r.status==='Pending'&&r.due<now;
+    const tag=overdue?' <span class="tag" style="background:#fdecec;color:#b91c1c">Overdue</span>':'';
+    return `<tr><td style="${td}">${esc(r.inst)}</td><td style="${td}">${esc(r.sent)}</td><td style="${td}">${esc(r.by)}${tag}</td><td style="${td}"><select class="input" data-i="${i}" style="max-width:170px;padding:6px 8px">${statuses.map(s=>`<option ${s===r.status?'selected':''}>${s}</option>`).join('')}</select></td></tr>`;
+  }).join('');
+}
+$('rc-tracker').addEventListener('change',e=>{if(e.target.dataset.i!==undefined){tracker[e.target.dataset.i].status=e.target.value;renderTracker()}});
+function build(){
+  const type=$('rc-type').value;
+  const amt=Number($('rc-amount').value||0).toLocaleString('en-AU');
+  const payee=$('rc-payee').value.trim()||'[payee name not provided]';
+  const summary=$('rc-summary').value.trim()||'[customer account not yet provided]';
+  const ev=[...document.querySelectorAll('.rc-ev')];
+  const labels=['payment receipt screenshot','messages from the caller','call log'];
+  const have=labels.filter((_,i)=>ev[i].checked);
+  const evText=have.length?have.join(', '):'none listed yet';
+  const items=[`Contact: ${type} [E2]`,`Payment of $${amt} to ${payee} [E1]`,`Customer's account: ${summary} [F3]`];
+  const missing=[];
+  if(!ev[2].checked)missing.push('The number that called you');
+  $('rc-timeline').innerHTML=items.map(t=>`<li>${esc(t)}</li>`).join('')+missing.map(m=>`<li style="color:#a65d17;font-weight:700">Missing: ${esc(m)}</li>`).join('');
+  $('rc-police').textContent=`To: [Police reporting destination: placeholder]
+Subject: Report of a scam involving a payment of $${amt}
+
+I am reporting a scam that happened on 15 November 2026 at about 2:10 pm [F1].
+Contact: ${type} [F2]
+What I was told: ${summary} [F3]
+Payment: $${amt} to "${payee}" [F4]
+Evidence I hold: ${evText} [E1-E3]
+
+Name: Margaret (demo)
+Signed: [customer to sign]`;
+  $('rc-scam').textContent=`Scam report (draft)
+Date and time: 15 November 2026, about 2:10 pm [F1]
+Type of scam: ${type} [F2]
+Amount lost: $${amt} [F4]
+Receiving account: ${payee} [F4]
+What the scammer said: ${summary} [F3]
+Evidence available: ${evText} [E1-E3]`;
+  $('rc-bank').textContent=`Hold and recall request (draft)
+Please place a hold on, and investigate, funds received into the account for ${payee} on 15 November 2026 for $${amt} [F4].
+Our customer, Margaret (demo), made this payment as a result of a scam [F2, F3].
+Supporting evidence: ${evText} [E1-E3].
+Please confirm receipt and provide a reference number and expected response time.`;
+  $('rc-review').checked=false;
+  $('rc-signmsg').textContent='';
+}
+$('rc-build').addEventListener('click',build);
+$('rc-sign').addEventListener('click',()=>{
+  $('rc-signmsg').innerHTML=$('rc-review').checked
+    ?'<span style="color:#136d57;font-weight:700">Demo only: in a real system this would go to the reporting destinations and the receiving bank.</span>'
+    :'<span style="color:#a65d17;font-weight:700">Tick the review box first.</span>';
+});
+$('rc-support').addEventListener('click',()=>{
+  $('rc-supportmsg').innerHTML='<span style="color:#136d57;font-weight:700">Demo only: a follow-up would be requested. Nothing is booked.</span>';
+});
+renderTracker();
+build();
+})();
+</script>
+</body></html>
