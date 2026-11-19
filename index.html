@@ -507,7 +507,7 @@ const tracker=[
   {inst:'Demo Bank B (receiving)',sent:'15 Nov, 15:05',by:'15 Nov, 17:05',due:new Date('2026-11-15T17:05:00+10:00'),status:'Pending'},
   {inst:'Demo Payments Hub',sent:'15 Nov, 15:20',by:'16 Nov, 15:20',due:new Date('2026-11-16T15:20:00+10:00'),status:'Hold placed'}
 ];
-const statuses=['Pending','Hold placed','Funds returned','Declined','No response'];
+const statuses=['Pending','Hold placed','Funds returned','Declined','No response','Demo recorded'];
 function renderTracker(){
   const now=new Date();
   $('rc-tracker').innerHTML=tracker.map((r,i)=>{
@@ -557,10 +557,26 @@ Please confirm receipt and provide a reference number and expected response time
   $('rc-signmsg').textContent='';
 }
 $('rc-build').addEventListener('click',build);
+// Link the demo Send button to Recovery Tracker; no real submission occurs.
+let demoSubmissionRecorded = false;
 $('rc-sign').addEventListener('click',()=>{
-  $('rc-signmsg').innerHTML=$('rc-review').checked
-    ?'<span style="color:#136d57;font-weight:700">Demo only: in a real system this would go to the reporting destinations and the receiving bank.</span>'
-    :'<span style="color:#a65d17;font-weight:700">Tick the review box first.</span>';
+  if (!$('rc-review').checked) {
+    $('rc-signmsg').innerHTML='<span style="color:#a65d17;font-weight:700">Tick the review box first.</span>';
+    return;
+  }
+  if (!demoSubmissionRecorded) {
+    const now = new Date();
+    tracker.unshift({
+      inst: 'Recovery reports · Demo only (not sent)',
+      sent: now.toLocaleString('en-AU', {day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}),
+      by: 'N/A · simulation',
+      due: now,
+      status: 'Demo recorded'
+    });
+    demoSubmissionRecorded = true;
+    renderTracker();
+  }
+  $('rc-signmsg').innerHTML='<span style="color:#136d57;font-weight:700">Demo submission recorded in Recovery Tracker. Nothing was actually sent.</span>';
 });
 $('rc-support').addEventListener('click',()=>{
   $('rc-supportmsg').innerHTML='<span style="color:#136d57;font-weight:700">Demo only: a follow-up would be requested. Nothing is booked.</span>';
